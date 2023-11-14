@@ -3,7 +3,7 @@
 
 #include <stdarg.h>
 #include <unistd.h>
-#include <stddef.h>
+/* #include <stddef.h> */
 
 
 void _putchar(int c, int *char_count);
