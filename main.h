@@ -5,6 +5,8 @@
 #include <unistd.h>
 /* #include <stddef.h> */
 
+#include <stdlib.h>
+
 
 void _putchar(int c, int *char_count);
 
