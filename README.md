@@ -1,1 +1,1 @@
-Write our printf function team kevin and jawad.
+This is a collaborative project between kevin and jawad on the printf project 
