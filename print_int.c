@@ -7,12 +7,14 @@
  */
 void print_int_recursive(int n, int *char_count)
 {
+	char digit;
+	
 	if (n == 0)
 		return;
 
 	print_int_recursive(n / 10, char_count);
 
-	char digit = '0' + n % 10;
+	digit = '0' + n % 10;
 
 	_putchar(digit, char_count);
 }
