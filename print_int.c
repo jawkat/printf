@@ -38,3 +38,17 @@ void print_int(int n, int *char_count)
 		print_int_recursive(n, char_count);
 	}
 }
+/**
+ * print_binary - Print an unsigned integer in binary format
+ * @n: The unsigned integer to print
+ * @char_count: Pointer to the character count
+ */
+void print_binary(unsigned int n, int *char_count)
+{
+	int i;
+
+	for (i = 31; i >= 0; i--)
+	{
+		_putchar(((n >> i) & 1) + '0', char_count);
+	}
+}

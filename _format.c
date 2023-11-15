@@ -20,21 +20,15 @@ int _format(const char *format, va_list args, int *char_count)
 				continue;
 			}
 			if (*(format + 1) == 'c')
-			{
 				_putchar(va_arg(args, int), char_count);
-			}
 			else if (*(format + 1) == 's')
-			{
 				print_str(va_arg(args, char *), char_count);
-			}
 			else if (*(format + 1) == 'd' || *(format + 1) == 'i')
-			{
 				print_int(va_arg(args, int), char_count);
-			}
+			else if (*(format + 1) == 'b')
+				print_binary(va_arg(args, unsigned int), char_count);
 			else
-			{
 				_unsupported(*(format + 1), char_count);
-			}
 			if (*char_count == -1)  /* Check for error in _putchar */
 				return (-1);
 			format += 2;  /* Move to the next format specifier */
