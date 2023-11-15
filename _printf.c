@@ -3,23 +3,23 @@
 /**
  * _printf - Custom printf function
  * @format: The format string
- * @...: Variable arguments
  *
- * Return: The number of characters printed
+ * Return: The number of characters printed (excluding the null byte),
+ * or -1 on error
  */
 int _printf(const char *format, ...)
 {
 	int char_count = 0; /* Initialize the character count */
-	va_list args; /* Declare a variable list to hold the variable arguments */
+	va_list args;       /* Declare a variable the variable arguments */
 
 	va_start(args, format); /* Start processing the variable arguments */
-	_format(format, args, &char_count); /* Call the _format to process string */
-	va_end(args); /* End processing the variable arguments */
-
-	if (char_count < 0)
+	if (_format(format, args, &char_count) == -1)
 	{
+		va_end(args); /* End processing the variable arguments on error */
 		return (-1);
 	}
+	va_end(args); /* End processing the variable arguments */
 
-	return (char_count); /* Return the total number of characters printed */
+	return (char_count); /* Return the total number of characters printed */
 }
+
