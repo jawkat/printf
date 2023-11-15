@@ -10,7 +10,7 @@
 
 void _putchar(int c, int *char_count);
 
-void _format(const char *format, va_list args, int *char_count);
+int _format(const char *format, va_list args, int *char_count);
 
 void print_str(char *str, int *char_count);
 
