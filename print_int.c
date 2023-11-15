@@ -7,16 +7,14 @@
  */
 void print_int_recursive(int n, int *char_count)
 {
-    char digit;
+	char digit;
 
-    if (n == 0)
-        return;
+	if (n == 0)
+		return;
 
-    print_int_recursive(n / 10, char_count);
-
-    digit = '0' + n % 10;
-
-    _putchar(digit, char_count);
+	print_int_recursive(n / 10, char_count);
+	digit = '0' + n % 10;
+	_putchar(digit, char_count);
 }
 
 /**
@@ -26,17 +24,17 @@ void print_int_recursive(int n, int *char_count)
  */
 void print_int(int n, int *char_count)
 {
-    if (n == 0)
-    {
-        _putchar('0', char_count);
-    }
-    else if (n < 0)
-    {
-        _putchar('-', char_count);
-        print_int_recursive(-n, char_count);
-    }
-    else
-    {
-        print_int_recursive(n, char_count);
-    }
+	if (n == 0)
+	{
+		_putchar('0', char_count);
+	}
+	else if (n < 0)
+	{
+		_putchar('-', char_count);
+		print_int_recursive(-n, char_count);
+	}
+	else
+	{
+		print_int_recursive(n, char_count);
+	}
 }
