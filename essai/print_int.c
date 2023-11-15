@@ -43,12 +43,24 @@ void print_int(int n, int *char_count)
  * @n: The unsigned integer to print
  * @char_count: Pointer to the character count
  */
+
 void print_binary(unsigned int n, int *char_count)
 {
 	int i;
+	int _zeros = 1;  /* zeros */
 
 	for (i = 31; i >= 0; i--)
 	{
-		_putchar(((n >> i) & 1) + '0', char_count);
+		if (((n >> i) & 1) || !_zeros)
+		{
+			_putchar(((n >> i) & 1) + '0', char_count);
+			_zeros = 0;  /* no longer used */
+		}
+	}
+
+	/* If the integer was 0, print a single 0 */
+	if (_zeros)
+	{
+		_putchar('0', char_count);
 	}
 }
