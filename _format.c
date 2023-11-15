@@ -19,7 +19,6 @@ int _format(const char *format, va_list args, int *char_count)
 				format += 2;
 				continue;
 			}
-
 			if (*(format + 1) == 'c')
 			{
 				_putchar(va_arg(args, int), char_count);
@@ -36,7 +35,6 @@ int _format(const char *format, va_list args, int *char_count)
 			{
 				_unsupported(*(format + 1), char_count);
 			}
-
 			if (*char_count == -1)  /* Check for error in _putchar */
 				return (-1);
 			format += 2;  /* Move to the next format specifier */
@@ -46,7 +44,6 @@ int _format(const char *format, va_list args, int *char_count)
 			_putchar(*format, char_count);
 			if (*char_count == -1)  /* Check for error in _putchar */
 				return (-1);
-
 			++format;  /* Move to the next character in the format string */
 		}
 	}
