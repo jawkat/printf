@@ -16,7 +16,9 @@ void print_str(char *str, int *char_count);
 
 void print_binary(unsigned int n, int *char_count);
 
-void print_int_recursive(int n, int *char_count);
+void print_int_recursive(unsigned int n, int *char_count);
+
+void print_u_int(unsigned int n, int *char_count);
 
 void print_int(int n, int *char_count);
 
